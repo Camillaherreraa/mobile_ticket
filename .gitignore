@@ -1,0 +1,36 @@
+# dependências
+node_modules/
+server/node_modules/
+
+# build / saída
+www/
+dist/
+coverage/
+.tmp/
+.angular/
+
+# banco local / dados gerados
+server/database.db
+server/data/
+
+# ambiente
+.env
+server/.env
+
+# IDE / sistema
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Windows: evite nomes reservados
+NUL
+**/NUL
+CON
+PRN
+AUX
+COM1
+LPT1
+
+# não ignorar lockfiles
+!package-lock.json
+!server/package-lock.json
