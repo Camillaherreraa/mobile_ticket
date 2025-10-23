@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar class="header-blue">
+    <ion-title>Relatórios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <h2>Relatório Diário</h2>
+  <ion-item>
+    <ion-label position="stacked">Data</ion-label>
+    <ion-input type="date" [value]="date()" (ionInput)="onDate($event)"></ion-input>
+  </ion-item>
+  <ion-button expand="block" [disabled]="loading()" (click)="loadDaily()">Carregar diário</ion-button>
+
+  <div *ngIf="dailyData() as d" class="block">
+    <ion-list>
+      <ion-list-header>Totais</ion-list-header>
+      <ion-item>Emitidas: {{ d.totais?.emitidas ?? 0 }}</ion-item>
+      <ion-item>Atendidas: {{ d.totais?.atendidas ?? 0 }}</ion-item>
+      <ion-item>Descartadas: {{ d.totais?.descartadas ?? 0 }}</ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header>Por Tipo</ion-list-header>
+      <ion-item>SP: {{ d.tipos?.SP ?? 0 }}</ion-item>
+      <ion-item>SG: {{ d.tipos?.SG ?? 0 }}</ion-item>
+      <ion-item>SE: {{ d.tipos?.SE ?? 0 }}</ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header>Detalhado</ion-list-header>
+      <ion-item *ngFor="let row of d.detalhado ?? []">
+        <ion-label>
+          <h3 class="code">{{ row.code }}</h3>
+          <p>{{ row.type }} • guichê {{ row.counter || '-' }} • emitida {{ row.issued_at | date:'short' }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <h2>Relatório Mensal</h2>
+  <div class="grid">
+    <ion-item>
+      <ion-label position="stacked">Ano</ion-label>
+      <ion-input type="number" placeholder="2025" [value]="year() ?? ''" (ionInput)="onYear($event)"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Mês</ion-label>
+      <ion-input type="number" placeholder="10" [value]="month() ?? ''" (ionInput)="onMonth($event)"></ion-input>
+    </ion-item>
+  </div>
+  <ion-button expand="block" [disabled]="loading()" (click)="loadMonthly()">Carregar mensal</ion-button>
+
+  <div *ngIf="monthlyData() as m" class="block">
+    <ion-list>
+      <ion-list-header>Totais no mês</ion-list-header>
+      <ion-item>Emitidas: {{ m.totais?.emitidas ?? 0 }}</ion-item>
+      <ion-item>Atendidas: {{ m.totais?.atendidas ?? 0 }}</ion-item>
+      <ion-item>Descartadas: {{ m.totais?.descartadas ?? 0 }}</ion-item>
+    </ion-list>
+  </div>
+
+  <div *ngIf="msg()" class="hint">{{ msg() }}</div>
+</ion-content>

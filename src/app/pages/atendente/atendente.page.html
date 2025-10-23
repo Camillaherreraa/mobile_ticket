@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Atendente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="stacked">Guichê</ion-label>
+    <ion-input type="number" placeholder="Ex.: 1" [formControl]="counterCtrl"></ion-input>
+  </ion-item>
+
+  <div class="actions">
+    <ion-button expand="block" [disabled]="busy()" (click)="callNext()">Chamar próximo</ion-button>
+    <ion-button expand="block" color="success" [disabled]="busy() || !current()" (click)="finish()">Finalizar</ion-button>
+  </div>
+
+  <ion-card *ngIf="current() as t">
+    <ion-card-header>
+      <ion-card-title>Em atendimento</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="code">{{ t.code }}</div>
+      <div>Tipo: {{ t.type }}</div>
+      <div>Status: {{ t.status }}</div>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="hint" *ngIf="message()">{{ message() }}</div>
+</ion-content>

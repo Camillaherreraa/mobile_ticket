@@ -1,0 +1,64 @@
+
+.toolbar-clear {
+  --background: transparent;
+  --border-width: 0;
+  height: 8px;
+}
+
+ion-content {
+  --background: #ffffff; 
+}
+
+
+.title {
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: .5px;
+  margin: 8px 0 18px;
+  color: #1b1b1b;
+}
+
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+
+.card {
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  border-radius: 22px;
+  height: 150px;               
+  box-shadow: 0 6px 16px rgba(0,0,0,.18);
+  transition: transform .08s ease, box-shadow .08s ease;
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+}
+
+.card:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.22); }
+.card:active { transform: translateY(0); }
+
+
+.label {
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+
+.card--green  { background: #10c060; }  
+.card--blue   { background: #0b57d0; } 
+.card--yellow { background: #ffd54f; } 
+.card--orange { background: #ff7a21; }  
+
+
+@media (max-width: 680px) {
+  .cards { grid-template-columns: 1fr; }
+  .card { height: 120px; }
+  .label { font-size: 20px; }
+}

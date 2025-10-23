@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar class="header-blue">
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="page ion-padding">
+
+  <div class="grid">
+
+    <section class="list">
+      <h2>Ultimas senhas chamadas:</h2>
+
+      <ion-list lines="none">
+        <ion-item *ngFor="let c of calls()">
+          <ion-label>
+            <div class="list-code">{{ c.code }}</div>
+            <div class="list-meta">
+              Tipo: {{ c.type }} • Guichê {{ c.counter }} • {{ c.called_at | date:'shortTime' }}
+            </div>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </section>
+
+    <section class="highlight" *ngIf="latest() as l">
+      <div class="highlight__title">SENHA:</div>
+      <div class="highlight__code">{{ l.code }}</div>
+      <div class="highlight__meta">
+        Tipo: {{ l.type }} • Guichê {{ l.counter }} • {{ l.called_at | date:'shortTime' }}
+      </div>
+    </section>
+
+  </div>
+
+  <div class="empty" *ngIf="!latest()">Sem chamadas ainda…</div>
+
+</ion-content>

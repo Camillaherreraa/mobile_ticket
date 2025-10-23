@@ -1,0 +1,8 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 10px;
+}
+.code { font: 700 18px/1.1 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.hint { margin-top: 8px; opacity: .8; }
+h2 { margin: 18px 0 8px; font-size: 18px; }

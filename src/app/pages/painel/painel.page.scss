@@ -1,0 +1,87 @@
+/* fundo branco */
+.page {
+  --background: #fff;
+  background: #fff;
+}
+
+:host ::ng-deep ion-header.p-header,
+:host ::ng-deep ion-header.p-header ion-toolbar {
+  --background: #0b57d0 !important; /* azul */
+  --color: #ffffff !important;
+  --border-width: 0;
+  background: #0b57d0 !important;   /* fallback extra */
+}
+
+:host ::ng-deep ion-header.p-header ion-title {
+  color: #ffffff !important;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.6rem;
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 28px;
+  align-items: start;
+  margin-top: 18px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .list { order: 2; }
+  .highlight { order: 1; }
+}
+
+/* Título da seção (lista) */
+.list h2 {
+  font-weight: 800;
+  margin: 0 0 10px;
+}
+
+/* itens da lista */
+.list-code {
+  font-weight: 800;
+  font-size: 18px;
+}
+.list-meta {
+  opacity: .85;
+  font-size: 14px;
+}
+
+/* Card de destaque (azul) */
+.highlight {
+  background: #0a49ad; /* azul mais escuro do card */
+  color: #fff;
+  border-radius: 20px;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 16px 28px rgba(0,0,0,.18);
+}
+
+.highlight__title {
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: .5px;
+  margin-bottom: 6px;
+}
+.highlight__code {
+  font: 800 40px/1.15 ui-monospace, SFMono-Regular, Menlo, monospace;
+  margin-bottom: 8px;
+}
+.highlight__meta {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* estado vazio */
+.empty {
+  text-align: center;
+  margin-top: 24px;
+  opacity: .7;
+}

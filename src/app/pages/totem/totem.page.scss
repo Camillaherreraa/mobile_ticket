@@ -1,0 +1,79 @@
+/* fundo branco e padding padrão */
+.page {
+  --background: #fff;
+  background: #fff;
+  padding: 16px;
+}
+
+ion-title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: #ffffff !important;
+}
+
+/* faixa verde do topo */
+ion-header, ion-toolbar.header-green {
+  --background: #10c060 !important;
+  background: #10c060 !important;
+  color: #ffffff !important;
+  --color: #ffffff !important;
+  --border-width: 0;
+}
+
+
+/* grid de 3 colunas para os botões */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+/* “botão” verde arredondado, 100% clicável */
+.action {
+  background: #10c060;
+  color: #fff;
+  border-radius: 20px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,.12);
+  cursor: pointer;
+  transition: transform .08s ease, box-shadow .08s ease;
+  user-select: none;
+}
+.action:hover { transform: translateY(-2px); box-shadow: 0 14px 26px rgba(0,0,0,.16); }
+.action:active { transform: translateY(0); }
+
+.action__label {
+  display: block;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* bloco da confirmação — centralizado e sem cortar */
+.ticket {
+  margin: 28px auto 0;
+  text-align: center;
+  max-width: 680px;
+  padding: 0 8px;
+  color: #111;
+}
+.ticket__title { font-size: 18px; margin-bottom: 8px; }
+.ticket__code  { font: 800 36px/1.1 ui-monospace, SFMono-Regular, Menlo, monospace; margin-bottom: 6px; }
+.ticket__meta  { color: #111; opacity: .85; font-size: 14px; }
+
+/* responsivo */
+@media (max-width: 980px) {
+  .grid { grid-template-columns: 1fr; }
+  .action { height: 96px; }
+  .action__label { font-size: 17px; }
+  .ticket__code { font-size: 32px; }
+}

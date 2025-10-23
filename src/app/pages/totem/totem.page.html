@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar class="header-green">
+    <ion-title>ATENDIMENTO</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="page">
+  <div class="grid">
+    <div class="action" (click)="emit('SP')">
+      <span class="action__label">SENHA PRIORITÁRIA<br />(SP)</span>
+    </div>
+
+    <div class="action" (click)="emit('SG')">
+      <span class="action__label">SENHA GERAL<br />(SG)</span>
+    </div>
+
+    <div class="action" (click)="emit('SE')">
+      <span class="action__label">EXAMES<br />(SE)</span>
+    </div>
+  </div>
+
+  <section class="ticket" *ngIf="lastTicket() as t">
+    <h3 class="ticket__title">Senha emitida</h3>
+    <div class="ticket__code">{{ t.code }}</div>
+    <div class="ticket__meta">Tipo: {{ t.type }}</div>
+    <div class="ticket__meta">Emitida: {{ t.issued_at | date:'M/d/yy, h:mm a' }}</div>
+  </section>
+</ion-content>
