@@ -2,6 +2,12 @@
 
 Projeto desenvolvido como parte da atividade avaliativa da disciplina, utilizando **Ionic + Angular** para criação de um aplicativo simples de gerenciamento de senhas e atendimento.
 
+
+# Como rodar a aplicação
+É necessário ter instalado as dependencias (npm install)
+Em um terminal entre na pasta Server e rode o comando (npm run dev) para inicializar o servidor
+Abra outro terminal e incie a aplicação com o comando (ionic serve)
+
 A aplicação permite:
 
 - Emissão de senha para usuários  
@@ -10,14 +16,11 @@ A aplicação permite:
 - Finalizar e descartar atendimentos  
 - Botão global para retornar à tela inicial  
 - Armazenamento local (variáveis ou SQLite, conforme instrução)
-
-O repositório segue exatamente o que a atividade solicita:
-
 - Repositório **público**
 - Nome: **mobile_ticket**
 - Contém: `README.md`, `TODO.md` e `LICENSE`
 - Licença: **Creative Commons (CC BY 4.0)**
-- A **pasta raiz do repositório** é exatamente a pasta raiz do projeto Ionic
+
 
 ---
 
@@ -56,16 +59,9 @@ mobile_ticket/
   - **Descartar senha**
 - Layout estilizado conforme modelo da atividade
 
-### Botão Global
-- Botão *“Voltar ao Início”* presente em **todas** as telas (implementado no `app.component`)
-
----
-
 ## Licença
 Este projeto está licenciado sob **Creative Commons Attribution 4.0 International (CC BY 4.0)**.  
 Consulte o arquivo **LICENSE** para mais detalhes.
-
----
 
 ## Autor
 **Camilla Herrera**  
