@@ -5,6 +5,8 @@
 **João Pedro Costa Lira**  
 
 
+
+
 # 📱 Mobile Ticket — Sistema de Controle de Atendimento
 
 Projeto desenvolvido como parte da atividade avaliativa da disciplina, utilizando **Ionic + Angular** para criação de um aplicativo simples de gerenciamento de senhas e atendimento.
