@@ -1,3 +1,13 @@
+## Autores
+**Amanda Victoria Araujo de Souza**  
+**Camilla Wanderley de Almeida Herrera**  
+**João Pedro Costa Lira **  
+**Camilla Wanderley de Almeida Herrera**  
+
+
+
+
+
 # 📱 Mobile Ticket — Sistema de Controle de Atendimento
 
 Projeto desenvolvido como parte da atividade avaliativa da disciplina, utilizando **Ionic + Angular** para criação de um aplicativo simples de gerenciamento de senhas e atendimento.
@@ -63,8 +73,5 @@ mobile_ticket/
 Este projeto está licenciado sob **Creative Commons Attribution 4.0 International (CC BY 4.0)**.  
 Consulte o arquivo **LICENSE** para mais detalhes.
 
-## Autor
-**Camilla Herrera**  
-GitHub: https://github.com/camillaherreraa
 
 
