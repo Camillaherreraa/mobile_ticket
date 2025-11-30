@@ -1,12 +1,8 @@
 ## Autores
 **Amanda Victoria Araujo de Souza**  
 **Camilla Wanderley de Almeida Herrera**  
-**Jucier Fernando Lima da Silva Filho*  
+**Jucier Fernando Lima da Silva Filho**
 **João Pedro Costa Lira**  
-
-
-
-
 
 
 # 📱 Mobile Ticket — Sistema de Controle de Atendimento
