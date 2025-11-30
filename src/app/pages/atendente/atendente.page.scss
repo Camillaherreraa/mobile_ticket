@@ -1,3 +1,96 @@
-.actions { display: grid; gap: 10px; margin: 12px 0 6px; }
-.code { font: 700 24px/1.1 ui-monospace, SFMono-Regular, Menlo, monospace; }
-.hint { margin-top: 8px; opacity: .8; }
+/* ===== FUNDO DA PÁGINA ===== */
+.at-page {
+  --background: #ffffff;
+}
+
+/* ===== HEADER AMARELO ===== */
+ion-header {
+  background-color: #ffe066;
+}
+
+ion-header ion-toolbar {
+  --background: #ffe066;
+  justify-content: center;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+ion-header ion-title {
+  width: 100%;
+  text-align: center;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.03em;
+}
+
+/* ===== CONTAINER CENTRAL ===== */
+.at-page .wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 35px;
+  gap: 28px;
+}
+
+/* texto digitado e placeholder grandes e centralizados */
+.at-page .counter-input .native-input,
+.at-page .counter-input input {
+  width: 100px;
+  height: 10px;
+  font-size: 26px !important;     /* tamanho do texto */
+  text-align: center !important;  /* centraliza horizontalmente */
+  line-height: 90px;              /* centraliza verticalmente */
+  letter-spacing: 0.02em;
+}
+
+.at-page .counter-input .native-input::placeholder,
+.at-page .counter-input input::placeholder {
+  font-size: 26px !important;
+  opacity: 0.6;
+}
+
+/* ===== GRUPO DE BOTÕES ===== */
+.at-page .btn-group {
+  margin-top: 10px;
+  width: 85%;
+  max-width: 350px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: center;
+}
+
+/* ===== BOTÕES AMARELOS GRANDES ===== */
+.at-page .btn-yellow {
+  width: 100%;
+  height: 78px;
+
+  background-color: #ffe066;
+  border: none;
+  border-radius: 4px;
+
+  font-size: 20px;
+  font-weight: 800;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  text-align: center;
+
+  cursor: pointer;
+}
+
+/* estado desabilitado: amarelo mais claro */
+.at-page .btn-yellow:disabled {
+  background-color: #fff2a8;
+  cursor: default;
+}
+
+/* ===== MENSAGEM ABAIXO DOS BOTÕES ===== */
+.at-page .message {
+  margin-top: 5px;
+  text-align: center;
+  font-size: 35px;
+}

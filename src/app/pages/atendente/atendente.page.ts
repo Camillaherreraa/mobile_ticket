@@ -1,7 +1,11 @@
 import { Component, signal } from '@angular/core';
 import {
-  IonHeader, IonToolbar, IonTitle, IonContent, IonInput, IonItem, IonLabel,
-  IonButton, IonCard, IonCardHeader, IonCardTitle, IonCardContent
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonInput,
+  IonButton,
 } from '@ionic/angular/standalone';
 import { ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 import { NgIf } from '@angular/common';
@@ -11,15 +15,24 @@ import { ApiService, Ticket } from '../../core/api';
   selector: 'app-atendente',
   standalone: true,
   imports: [
-    IonHeader, IonToolbar, IonTitle, IonContent, IonInput, IonItem, IonLabel,
-    IonButton, IonCard, IonCardHeader, IonCardTitle, IonCardContent,
-    ReactiveFormsModule, NgIf
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonInput,
+    IonButton,
+    ReactiveFormsModule,
+    NgIf,
   ],
   templateUrl: './atendente.page.html',
-  styleUrls: ['./atendente.page.scss']
+  styleUrls: ['./atendente.page.scss'],
 })
 export class AtendentePage {
-  counterCtrl = new FormControl<number | null>(null, { nonNullable: false, validators: [Validators.required, Validators.min(1)] });
+  counterCtrl = new FormControl<number | null>(null, {
+    nonNullable: false,
+    validators: [Validators.required, Validators.min(1)],
+  });
+
   current = signal<Ticket | null>(null);
   busy = signal(false);
   message = signal<string | null>(null);
@@ -28,15 +41,25 @@ export class AtendentePage {
 
   async callNext() {
     if (this.busy()) return;
+
     const counter = this.counterCtrl.value ?? 0;
-    if (!counter) { this.message.set('Informe o guichê.'); return; }
+    if (!counter) {
+      this.message.set('Informe o guichê.');
+      return;
+    }
 
     this.busy.set(true);
     this.message.set(null);
+
     try {
       const t = await this.api.callNext(counter).toPromise();
       this.current.set(t ?? null);
-      if (!t) this.message.set('Não há senhas na fila.');
+
+      if (!t) {
+        this.message.set('Não há senhas na fila.');
+      } else {
+        this.message.set(`Chamando senha: ${t.code}`);
+      }
     } finally {
       this.busy.set(false);
     }
@@ -44,7 +67,11 @@ export class AtendentePage {
 
   async finish() {
     const t = this.current();
-    if (!t) { this.message.set('Nada para finalizar.'); return; }
+    if (!t) {
+      this.message.set('Nada para finalizar.');
+      return;
+    }
+
     this.busy.set(true);
     try {
       await this.api.finish(t.id).toPromise();
@@ -53,5 +80,18 @@ export class AtendentePage {
     } finally {
       this.busy.set(false);
     }
+  }
+
+  // Botão DESCARTAR
+  discard() {
+    const t = this.current();
+    if (!t) {
+      this.message.set('Nada para descartar.');
+      return;
+    }
+
+    // Quando tiver endpoint de descarte no backend, chama aqui.
+    this.current.set(null);
+    this.message.set('Senha descartada.');
   }
 }
